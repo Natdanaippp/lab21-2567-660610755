@@ -52,7 +52,7 @@ export default function StudentPage() {
 
   const callEnrollApi = async () => {
     try {
-      /*const resp = await axios.post(
+      const resp = await axios.post(
         "/api/enrollments",
         {
           courseNo,
@@ -60,7 +60,8 @@ export default function StudentPage() {
         {
           headers: { Authorization: `Bearer ${token}` },
         }
-      );*/
+      );
+      console.log(resp);
       setCourseNo("");
       loadMyCourses();
     } catch (error) {
@@ -82,12 +83,13 @@ export default function StudentPage() {
   const callDropApi = async (drop_courseNo: string) => {
     setLoadingDropping(drop_courseNo);
     try {
-      /*const resp = await axios.delete("/api/enrollments", {
+      const resp = await axios.delete("/api/enrollments", {
         data: {
           courseNo: drop_courseNo,
         },
         headers: { Authorization: `Bearer ${token}` },
-      });*/
+      });
+      console.log(resp);
       loadMyCourses();
     } catch (error) {
       if (axios.isAxiosError(error)) {
