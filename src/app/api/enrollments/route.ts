@@ -167,7 +167,7 @@ export const DELETE = async (request: NextRequest) => {
   // Perform data delete
   await prisma.enrollment.delete({
     where: {
-    courseNo_studentId: {
+      courseNo_studentId: {
       courseNo: courseNo,
       studentId: studentId,
       },
