@@ -9,7 +9,10 @@ export interface Payload {
   studentId: string;
   role: string;
 }
-
+export interface Enrollment {
+  courseNo: string;
+  course: Course; 
+};
 export interface Student {
   studentId: string;
   firstName: string;
